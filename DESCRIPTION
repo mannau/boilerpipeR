@@ -1,0 +1,19 @@
+Package: boilerpipeR
+Maintainer: Mario Annau <mario.annau@gmail.com>
+License: Apache License (== 2.0)
+Title: Interface to the boilerpipe Java library by Christian Kohlschutter
+    (http://code.google.com/p/boilerpipe/)
+Authors@R: c(person("Mario", "Annau", role = c("aut", "cre"),
+    email = "mario.annau@gmail.com"))
+Description: Generic Extraction of main text content from HTML files; removal
+    of ads, sidebars and headers using the boilerpipe Java library. The
+    extraction heuristics from boilerpipe show a robust performance for a wide
+    range of web site templates.
+Version: 1.0
+Date: 2013-12-30
+Depends:
+    rJava
+Collate:
+    'Extractor.R'
+    'onload.R'
+    'boilerpipeR-package.R'

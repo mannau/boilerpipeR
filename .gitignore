@@ -1,0 +1,7 @@
+# History files
+.Rhistory
+
+# Example code in package build process
+*-Ex.R
+.project
+.settings/de.walware.r.core.prefs
