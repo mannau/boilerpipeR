@@ -9,7 +9,7 @@ Description: Generic Extraction of main text content from HTML files; removal
     of ads, sidebars and headers using the boilerpipe Java library. The
     extraction heuristics from boilerpipe show a robust performance for a wide
     range of web site templates.
-Version: 1.0
+Version: 1.1
 Date: 2013-12-30
 Depends:
     rJava
