@@ -1,0 +1,8 @@
+boilerpipeR 1.2.1
+----------------------------------------------------------------
+
+(BUG) FIXES
+
+* Small changes in DESCRIPTION, move packages from Depends to Imports
+
+* Add repository to github at https://github.com/mannau/boilerpipeR

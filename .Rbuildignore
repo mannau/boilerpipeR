@@ -4,3 +4,5 @@
 .README.md.html
 Makefile
 README.md
+release
+.*tar.gz
