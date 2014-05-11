@@ -1,7 +1,6 @@
 .settings
+.gitignore
 .project
 .README.md.html
-*.tar.gz
 Makefile
-*.Rcheck
-/release
+README.md
