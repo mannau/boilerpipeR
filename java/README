@@ -1,0 +1,6 @@
+This folder contains required java sources to build jar files located in inst/java folder.
+
+The following packages have been included:
+-boilerpipe by Christian Kohlschuetter, SVN checkout from http://boilerpipe.googlecode.com/svn/trunk, see also boilerpipe/boilerpipe-core/LICENSE.txt
+-nekohtml by Andy Clark, SVN checkout from svn://svn.code.sf.net/p/nekohtml/code/trunk, see also nekohtml/LICENSE.txt
+-xerces licensed to the Apache Software Foundation, SVN checkout from http://svn.apache.org/repos/asf/xerces/java/trunk, see also xerces-java-trunk/LICENSE

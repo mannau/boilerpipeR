@@ -1,0 +1,20 @@
+/* $Id: diagram.css 317483 2001-08-23 00:35:39Z lehors $ */
+.diagram { color: black; background: white; 
+           font-weight: normal;
+           text-align: center; vertical-align: middle }
+.component { color: black; background: silver;
+             border-style: solid; border-color: black; border-width: 2 }
+.parser { color: black; background: #FFFFDD; 
+           border-style: solid; border-color: black; border-width: 1;
+           text-align: center; vertical-align: middle }
+.manager { color: black; background: #DDDDFF; 
+           border-style: solid; border-color: black; border-width: 1;
+           text-align: center; vertical-align: middle }
+.config-component { color: black; background: #FFDDDD; 
+                    border-style: solid; border-color: black; border-width: 1;
+                    font-weight: normal; 
+                    text-align: center; vertical-align: middle }
+.non-config-component { color: black; background: silver; 
+                        border-style: solid; border-color: black; border-width: 1;
+                        font-weight: normal; 
+                        text-align: center; vertical-align: middle }

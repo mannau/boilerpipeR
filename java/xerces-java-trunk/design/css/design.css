@@ -1,0 +1,22 @@
+/* $Id: design.css 317483 2001-08-23 00:35:39Z lehors $ */
+.class { background: #DDDDFF }
+.class-title { font: bold }
+
+.interface { background: #FFDDDD }
+.interface-title { font: italic }
+
+.extends { }
+.implements { }
+
+.constants { }
+.constant-title { }
+
+.fields { }
+.field-title { }
+
+.constructors { }
+.constructor-title { text-decoration: underline }
+
+.methods { }
+.method-title { text-decoration: underline }
+.param-title { }
