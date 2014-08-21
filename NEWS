@@ -6,3 +6,9 @@ boilerpipeR 1.2.1
 * Small changes in DESCRIPTION, move packages from Depends to Imports
 
 * Add repository to github at https://github.com/mannau/boilerpipeR
+
+boilerpipeR 1.2.2
+----------------------------------------------------------------
+
+* Add AUTHORS file including authors of shipped .jar libraries
+* Add java dir in package including README and locations of open-source SVN repos
