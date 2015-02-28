@@ -7,3 +7,4 @@ Makefile
 README.md
 release
 .*tar.gz
+travis-tool.sh
