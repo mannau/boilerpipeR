@@ -1,7 +1,7 @@
 Package: boilerpipeR
 Version: 1.2.3
 Date: 2015-03-29
-Title: Interface to the boilerpipe Java library by Christian Kohlschutter
+Title: Interface to the Boilerpipe Java Library by Christian Kohlschutter
     (http://code.google.com/p/boilerpipe/)
 Author: See AUTHORS file.
 Maintainer: Mario Annau <mario.annau@gmail.com>
