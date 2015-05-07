@@ -1,8 +1,7 @@
 Package: boilerpipeR
-Version: 1.2.3
-Date: 2015-03-29
-Title: Interface to the Boilerpipe Java Library by Christian Kohlschutter
-    (http://code.google.com/p/boilerpipe/)
+Version: 1.3
+Date: 2015-05-07
+Title: Interface to the Boilerpipe Java Library
 Author: See AUTHORS file.
 Maintainer: Mario Annau <mario.annau@gmail.com>
 Imports:
@@ -10,7 +9,8 @@ Imports:
 Suggests:
     RCurl
 Description: Generic Extraction of main text content from HTML files; removal
-    of ads, sidebars and headers using the boilerpipe Java library. The
+    of ads, sidebars and headers using the boilerpipe 
+    (http://code.google.com/p/boilerpipe/) Java library. The
     extraction heuristics from boilerpipe show a robust performance for a wide
     range of web site templates.
 License: Apache License (== 2.0)
