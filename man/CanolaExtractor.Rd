@@ -2,7 +2,7 @@
 % Please edit documentation in R/Extractor.R
 \name{CanolaExtractor}
 \alias{CanolaExtractor}
-\title{A full-text extractor trained on a \href{http://krdwrd.org/}{krdwrd} \href{https://krdwrd.org/trac/attachment/wiki/Corpora/Canola/CANOLA.pdf}{Canola}.}
+\title{A full-text extractor trained on a 'krdwrd' Canola (see \code{https://krdwrd.org/trac/attachment/wiki/Corpora/Canola/CANOLA.pdf}.}
 \usage{
 CanolaExtractor(content, ...)
 }
@@ -15,7 +15,7 @@ CanolaExtractor(content, ...)
 extracted text as character
 }
 \description{
-A full-text extractor trained on a \href{http://krdwrd.org/}{krdwrd} \href{https://krdwrd.org/trac/attachment/wiki/Corpora/Canola/CANOLA.pdf}{Canola}.
+A full-text extractor trained on a 'krdwrd' Canola (see \code{https://krdwrd.org/trac/attachment/wiki/Corpora/Canola/CANOLA.pdf}.
 }
 \examples{
 data(content)

@@ -6,7 +6,7 @@
 #' \itemize{
 #' \item{\code{\link{ArticleExtractor}}}{A full-text extractor which is tuned towards news articles.}
 #' \item{\code{\link{ArticleSentencesExtractor}}}{A full-text extractor which is tuned towards extracting sentences from news articles.}
-#' \item{\code{\link{CanolaExtractor}}}{A full-text extractor trained on a \href{http://krdwrd.org/}{krdwrd}.}
+#' \item{\code{\link{CanolaExtractor}}}{A full-text extractor trained on a 'krdwrd'.}
 #' \item{\code{\link{DefaultExtractor}}}{A quite generic full-text extractor.}
 #' \item{\code{\link{KeepEverythingExtractor}}}{Marks everything as content.}
 #' \item{\code{\link{LargestContentExtractor}}}{A full-text extractor which extracts the largest text component of a page.}
@@ -73,7 +73,7 @@ ArticleSentencesExtractor <- function(content, ...){
 	Extractor("ArticleSentencesExtractor", content, ...)
 }
 
-#' @title A full-text extractor trained on a \href{http://krdwrd.org/}{krdwrd} \href{https://krdwrd.org/trac/attachment/wiki/Corpora/Canola/CANOLA.pdf}{Canola}.
+#' @title A full-text extractor trained on a 'krdwrd' Canola (see \code{https://krdwrd.org/trac/attachment/wiki/Corpora/Canola/CANOLA.pdf}.
 #' @param content Text content as character
 #' @param ... additional parameters
 #' @seealso \code{\link{Extractor}}
