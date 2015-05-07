@@ -1,62 +1,63 @@
-# Makefile
+Rscript := $(shell whereis Rscript) --vanilla -e
+R := $(shell whereis R)
 
-PACKAGE_NAME="boilerpipeR"
-SOURCE_FILES=DESCRIPTION R/*.R
+PKG_VERSION := $(shell grep -i ^version DESCRIPTION | cut -d : -d \  -f 2)
+PKG_NAME := $(shell grep -i ^package DESCRIPTION | cut -d : -d \  -f 2)
 
-GENERATED_BY_ROXYGEN=NAMESPACE *.Rd
-PACKAGE_VERSION:=$(shell cat DESCRIPTION | sed -n -e 's/Version: //p')
-R_LIBRARY_PATH:=$(shell echo "invisible(cat(.libPaths()[1],sep='','\n'))" | R --vanilla --slave)
-BUILT_PACKAGE:=$(PACKAGE_NAME)_$(PACKAGE_VERSION).tar.gz
-INSTALLED_PACKAGE:=$(R_LIBRARY_PATH)/$(PACKAGE_NAME)
+#DATA_FILES := $(wildcard data/*.rda)
+R_FILES := $(wildcard R/*.R)
+TEST_FILES := $(wildcard tests/*.R) $(wildcard tests/testthat/*.R)
+#ALL_SRC_FILES := $(wildcard src/*.cpp) $(wildcard src/*.h) src/Makevars
+#SRC_FILES := $(filter-out src/RcppExports.cpp, $(ALL_SRC_FILES))
+#HEADER_FILES := $(wildcard src/*.h)
+#RCPPEXPORTS := src/RcppExports.cpp R/RcppExports.R
+ROXYGENFILES := $(wildcard man/*.Rd) NAMESPACE 
+PKG_FILES := DESCRIPTION $(ROXYGENFILES) $(R_FILES) $(TEST_FILES)
+#OBJECTS := $(wildcard src/*.o) $(wildcard src/*.o-*) $(wildcard src/*.dll) $(wildcard src/*.so) $(wildcard src/*.rds)
+CHECKPATH := $(PKG_NAME).Rcheck
+CHECKLOG := `cat $(CHECKPATH)/00check.log`
 
-.PHONY: check install install-dependencies uninstall clean ci
+.PHONY: all build build-cran check check-cran manual install clean compileAttributes 
 
-all: $(BUILT_PACKAGE)
+all: 
+	install
+	
+build: $(PKG_NAME)_$(PKG_VERSION).tar.gz
 
-check: $(BUILT_PACKAGE)
-	@R CMD check --no-manual --no-multiarch $(BUILT_PACKAGE)
+build-cran:
+	@make clean
+	@make roxygen
+	$(R) CMD build --resave-data .
+	
+$(PKG_NAME)_$(PKG_VERSION).tar.gz: $(PKG_FILES)
+	@make roxygen
+	$(R) CMD build --resave-data --no-build-vignettes .
 
-install: $(INSTALLED_PACKAGE)
+roxygen: $(R_FILES)
+	$(Rscript) 'library(roxygen2); roxygenize()'
+	
+check: $(PKG_NAME)_$(PKG_VERSION).tar.gz 
+	@rm -rf $(CHECKPATH)
+	$(R) CMD check --no-multiarch --no-manual --no-clean $(PKG_NAME)_$(PKG_VERSION).tar.gz
 
-install-dependencies:
-	@installFromCRAN rJava
-	@# macxResearch is used in examples for plotting
-	@# macxAccount needs to be installed, since macxResearch depends on it.
-	@# installFromRepo researchaccounting/tradeAccount data/macxAccount researchaccounting/macxResearch
+check-cran: 
+	@make build-cran
+	@rm -rf $(CHECKPATH)
+	$(R) CMD check --as-cran --no-clean $(PKG_NAME)_$(PKG_VERSION).tar.gz
 
-uninstall:
-	@if [ -d $(INSTALLED_PACKAGE) ]; then \
-	R CMD REMOVE -l $(R_LIBRARY_PATH) $(PACKAGE_NAME); fi
+00check.log: check
+	@mv $(CHECKPATH)\\00check.log .
+	@rm -rf $(CHECKPATH)
+
+manual: $(PKG_NAME)-manual.pdf
+
+$(PKG_NAME)-manual.pdf: $(ROXYGENFILES)
+	$(R) CMD Rd2pdf --no-preview -o $(PKG_NAME)-manual.pdf .
+	
+install: $(PKG_NAME)_$(PKG_VERSION).tar.gz
+	$(R) CMD INSTALL --no-multiarch --byte-compile $(PKG_NAME)_$(PKG_VERSION).tar.gz
 
 clean:
-	@rm -f NAMESPACE
-	@rm -rf build.log
-	@rm -f $(PACKAGE_NAME)*.tar.gz
-	@rm -rf $(PACKAGE_NAME).Rcheck
-
-$(GENERATED_BY_ROXYGEN):
-	@# We generate all help pages with roxygen and do not mix generated and manually
-	@# created pages. Thus, we remove all help pages prior to running roxygen,
-	@# in order to remove 'dead' pages which were dropped or have been renamed.
-	@rm -rf NAMESPACE man/*
-	@echo 'library("roxygen2"); roxygenize(".", roclets=c("namespace","rd"))' | R --slave --vanilla
-
-$(BUILT_PACKAGE): $(GENERATED_BY_ROXYGEN) $(SOURCE_FILES)
-	@R CMD build .
-
-$(INSTALLED_PACKAGE): $(BUILT_PACKAGE)
-	@R CMD INSTALL --no-multiarch $(BUILT_PACKAGE)
-
-
-# executed by jenkins (continuous integration server) after every commit
-ci:
-	@echo "\n***** UNINSTALL"; make uninstall
-	@echo "\n***** CLEAN"; make clean
-	@echo "\n***** INSTALL DEPENDENCIES"; make install-dependencies
-	@echo "\n***** INSTALL"; make install
-	@echo "\n***** CHECK"; make check 2>&1 | tee build.log
-	@# If a check fails, R CMD check prints the words WARNING or ERROR to the
-	@# console, but does not throw an error. Thus we have to throw an error
-	@# manually to let the ci server know that the make target failed.
-	@if grep -s -w 'WARNING\|ERROR' build.log; then echo 'WARNING|ERROR occurred'; exit 1; fi
-
+	@rm -rf $(wildcard *.Rcheck)
+	@rm -f $(wildcard *.tar.gz)
+	@echo '*** PACKAGE CLEANUP COMPLETE ***'
