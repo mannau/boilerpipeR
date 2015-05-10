@@ -17,6 +17,13 @@ library(devtools)
 install_github("mannau/boilerpipeR")
 ```
 
+Windows users need to use the following command to install from github:
+
+```python
+library(devtools)
+install_github("mannau/boilerpipeR", args = "--no-multiarch")
+```
+
 ## Usage
 To download and extract the main text from e.g. the R-Studio blog you can use the following commands:
 ```python
