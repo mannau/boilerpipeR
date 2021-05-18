@@ -8,3 +8,6 @@ README.md
 release
 .*tar.gz
 travis-tool.sh
+^.*\.Rproj$
+^\.Rproj\.user$
+^\.github$
