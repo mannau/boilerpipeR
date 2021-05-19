@@ -7,7 +7,7 @@
 \title{Extract the main content from HTML files}
 \description{
 \pkg{boilerpipeR} interfaces the boilerpipe Java library, created by Christian
-Kohlschutter \url{http://code.google.com/p/boilerpipe/}. It implements robust heuristics
+Kohlschutter \url{https://github.com/kohlschutter/boilerpipe}. It implements robust heuristics
 to extract the main content from HTML files, removing unessecary
 elements like ads, banners and headers/footers.
 }

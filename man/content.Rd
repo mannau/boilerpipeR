@@ -3,24 +3,24 @@
 \docType{data}
 \name{content}
 \alias{content}
-\title{Wordpress generated Webpage (retrieved from Quantivity Blog \url{http://quantivity.wordpress.com}).
+\title{Wordpress generated Webpage (retrieved from Quantivity Blog \url{https://quantivity.wordpress.com}).
 Content is saved as character and ready to be extracted.}
 \description{
-Wordpress generated Webpage (retrieved from Quantivity Blog \url{http://quantivity.wordpress.com}).
+Wordpress generated Webpage (retrieved from Quantivity Blog \url{https://quantivity.wordpress.com}).
 Content is saved as character and ready to be extracted.
 }
 \examples{
 #Data set has been generated as follows:
 \dontrun{
 library(RCurl)
-url <- "http://quantivity.wordpress.com/2012/11/09/multi-asset-market-regimes/"
+url <- "https://quantivity.wordpress.com/2012/11/09/multi-asset-market-regimes/"
 content <- getURL(url)
 content <- iconv(content, "UTF-8", "ASCII//TRANSLIT")
 save(content, file = "content.rda")
 }
 }
 \references{
-\url{http://quantivity.wordpress.com}
+\url{https://quantivity.wordpress.com}
 }
 \author{
 Mario Annau

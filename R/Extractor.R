@@ -15,7 +15,7 @@
 #' @param content Text content or URL as character
 #' @param asText should content specifed be treated as actual text to be extracted or url (from which HTML document is first downloaded and extracted afterwards), defaults to TRUE
 #' @param ... additional parameters
-#' @references \url{http://code.google.com/p/boilerpipe/}
+#' @references \url{https://github.com/kohlschutter/boilerpipe}
 #' @importFrom rJava .jnew
 #' @importFrom rJava .jcall
 #' @return extracted text as character

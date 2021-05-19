@@ -33,7 +33,7 @@ It is the actual workhorse which directly calls the boilerpipe Java library. Typ
 functions as listed for parameter \code{exname}.
 }
 \references{
-\url{http://code.google.com/p/boilerpipe/}
+\url{https://github.com/kohlschutter/boilerpipe}
 }
 \author{
 Mario Annau

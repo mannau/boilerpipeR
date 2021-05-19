@@ -3,7 +3,7 @@
   [![R build status](https://github.com/mannau/boilerpipeR/workflows/R-CMD-check/badge.svg)](https://github.com/mannau/boilerpipeR/actions)
   <!-- badges: end -->
 
-**boilerpipeR** is an R-package which provides an interface to [boilerpipe](http://code.google.com/p/boilerpipe/), a Java library written by Christian Kohlschütter [1]. It supports the generic extraction of main text content from HTML files and therefore removes ads, side-bars and headers from the HTML source content. The extraction heuristics from *boilerpipe* show a robust performance for a wide range of web site templates.
+**boilerpipeR** is an R-package which provides an interface to [boilerpipe](https://github.com/kohlschutter/boilerpipe), a Java library written by Christian Kohlschütter [1]. It supports the generic extraction of main text content from HTML files and therefore removes ads, side-bars and headers from the HTML source content. The extraction heuristics from *boilerpipe* show a robust performance for a wide range of web site templates.
 
 
 ## Install

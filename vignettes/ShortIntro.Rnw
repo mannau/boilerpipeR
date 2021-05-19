@@ -60,7 +60,7 @@ library(RCurl)
 @
 we can retrieve the content of from a webpage using \pkg{RCurl}:
 <<eval=F, echo = T>>=
-url <- "http://quantivity.wordpress.com/2012/11/09/multi-asset-market-regimes/"
+url <- "https://quantivity.wordpress.com/2012/11/09/multi-asset-market-regimes/"
 content <- getURL(url)
 @
 
@@ -77,7 +77,7 @@ cat(substr(content, 1, 80))
 	\centering
   \includegraphics{figures/blogpicture}
 	\caption{Inspection of a typical Wordpress blog page
-	(\href{http://quantivity.wordpress.com}{http://quantivity.wordpress.com}). On
+	(\href{https://quantivity.wordpress.com}{https://quantivity.wordpress.com}). On
 	the bottom we can see the \proglang{HTML} DOM tree parsed by Firebug 
 	(\href{http://getfirebug.com/}{http://getfirebug.com/}). 
 	Only the main content (blue rectangle) is relevant for text mining purposes
