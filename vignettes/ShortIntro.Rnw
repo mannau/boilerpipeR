@@ -1,3 +1,4 @@
+\UseRawInputEncoding
 \documentclass[a4paper]{article}
 \usepackage{Sweave}
 \usepackage[margin=2cm]{geometry}
