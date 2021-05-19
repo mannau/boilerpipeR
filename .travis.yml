@@ -1,9 +1,0 @@
-language: r
-
-# Be strict when checking our package
-warnings_are_errors: true
-cran: http://cran.us.r-project.org
-
-# System dependencies for HTTP calling
-apt_packages:
- - r-cran-rjava
