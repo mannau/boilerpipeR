@@ -10,7 +10,7 @@ Suggests:
     RCurl
 Description: Generic Extraction of main text content from HTML files; removal
     of ads, sidebars and headers using the boilerpipe 
-    (https://github.com/kohlschutter/boilerpipe) Java library. The
+    <https://github.com/kohlschutter/boilerpipe> Java library. The
     extraction heuristics from boilerpipe show a robust performance for a wide
     range of web site templates.
 License: Apache License (== 2.0)
